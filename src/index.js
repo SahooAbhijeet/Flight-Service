@@ -9,8 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use('/api', apiRoutes);
-const PORT = 3000;
 
-app.listen(PORT, () => {
-    console.log(`Successfully started the server on PORT : ${PORT}`);
+app.listen(ServerConfig.PORT, () => {
+    console.log(`Successfully started the server on PORT : ${ServerConfig.PORT}`);
 });
