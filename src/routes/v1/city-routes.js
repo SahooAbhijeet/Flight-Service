@@ -1,13 +1,19 @@
 const express = require('express');
 const {CityController} = require('../../controllers');
-// const { AirplaneMiddlewares } = require('../../middlewares');
+const { CityMiddlewares } = require('../../middlewares');
 
 const router = express.Router();
 
 // /api/v1/cities POST
-router.post('/',  
+router.post('/',
+                CityMiddlewares.validateCreateRequest,
                 CityController.createCity);
 
+                
+// /api/v1/cities/:id DELETE
+router.delete('/:id',
+
+                CityController.deleteCity);
 
 
 module.exports = router;
