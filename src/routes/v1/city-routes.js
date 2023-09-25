@@ -12,8 +12,10 @@ router.post('/',
                 
 // /api/v1/cities/:id DELETE
 router.delete('/:id',
-
                 CityController.deleteCity);
 
+// /api/v1/cities GET
+router.get('/',
+CityController.getCity);
 
 module.exports = router;

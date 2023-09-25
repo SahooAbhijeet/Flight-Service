@@ -30,9 +30,18 @@ async function deleteCity(id) {
     }
 }
 
+async function getCity() {
+    try {
+        const airplane = await cityRepository.getAll();
+        return airplane;
+    } catch (error) {
+        throw new AppError('Cannot fetched all the cities successfully', StatusCodes.INTERNAL_SERVER_ERROR);
+    }
+}
 
 module.exports = {
     createCity,
-    deleteCity
+    deleteCity,
+    getCity
 
 }
