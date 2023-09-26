@@ -16,14 +16,14 @@ router.get('/',
 
 // /api/v1/airplane/:id GET
 router.get('/:id',
-         AirplaneController.getAirplane);
+        AirplaneController.getAirplane);
 
 // /api/v1/airplane/:id DELETE
 router.delete('/:id',
-         AirplaneController.deleteAirplane);
+        AirplaneController.deleteAirplane);
 
 // /api/v1/airplane/:id UPDATE
 router.patch('/:id',
-AirplaneController.updateAirplane);
+        AirplaneController.updateAirplane);
 
 module.exports = router;
