@@ -4,7 +4,7 @@
   "description": "this is the microservice project",
   "main": "index.js",
   "scripts": {
-    "dev": "npx nodemon src/index.js"
+    "start": "npx nodemon src/index.js"
   },
   "author": "",
   "license": "ISC",
