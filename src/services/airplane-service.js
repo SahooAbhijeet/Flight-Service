@@ -36,6 +36,9 @@ async function getAirplane(id) {
         const airplane = await airplaneRepository.get(id);
         return airplane;
     } catch (error) {
+        if(error.statusCode == StatusCodes.NOT_FOUND) {
+            throw new AppError('The airplane you rtequested is not available', error.statusCode);
+        }
         throw new AppError('Cannot fetched data of the airplane', StatusCodes.INTERNAL_SERVER_ERROR);
     }
 }

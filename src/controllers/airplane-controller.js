@@ -61,7 +61,7 @@ async function deleteAirplane(req, res) {
     } catch (error) {
         ErrorResponse.error = error;
         return res
-                .status(StatusCodes.INTERNAL_SERVER_ERROR)
+                .status(error.statusCode)
                 .json(ErrorResponse);
     }
 }
@@ -76,7 +76,7 @@ async function updateAirplane(req, res) {
     } catch (error) {
         ErrorResponse.error = error;
         return res
-                .status(StatusCodes.INTERNAL_SERVER_ERROR)
+                .status(error.statusCode)
                 .json(ErrorResponse);
     }
 }

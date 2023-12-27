@@ -13,5 +13,4 @@ app.use('/flightsService/api', apiRoutes);
 
 app.listen(ServerConfig.PORT, async () => {
     console.log(`Successfully started the server on PORT : ${ServerConfig.PORT}`);
-    const { City, Airport } = require('./models');
 });
