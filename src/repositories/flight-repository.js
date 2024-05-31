@@ -1,5 +1,5 @@
 const {Sequelize} = require('sequelize');
-const CrudRepository = require("./crud-repository");
+const CrudRepository = require('./crud-repository');
 const { Flight, Airplane, Airport, sequelize, City} = require('../models');
 const db = require('../models');
 const {addRowLockOnFlight} = require('./queries');
@@ -23,7 +23,7 @@ class FlightRepository extends CrudRepository {
                 required: true,
                 as: 'departure_airport',
                 on: {
-                    col1:  Sequelize.where(Sequelize.col("Flight.departureAirportId"), "=", Sequelize.col("departure_airport.code"))
+                    col1:  Sequelize.where(Sequelize.col('Flight.departureAirportId'), '=', Sequelize.col('departure_airport.code'))
                     },
                     include: {
                         model: City,
@@ -35,7 +35,7 @@ class FlightRepository extends CrudRepository {
                 required: true,
                 as: 'arrival_airport',
                 on: {
-                    col1:  Sequelize.where(Sequelize.col("Flight.arrivalAirportId"), "=", Sequelize.col("arrival_airport.code"))
+                    col1:  Sequelize.where(Sequelize.col('Flight.arrivalAirportId'), '=', Sequelize.col('arrival_airport.code')) 
                     },
                     include: {
                         model: City,

@@ -31,12 +31,13 @@ async function getAllFlights(query) {
         [departureAirportId, arrivalAirportId] = query.trips.split("-");
         customFilter.departureAirportId = departureAirportId;
         customFilter.arrivalAirportId = arrivalAirportId;
+        (departureAirportId === arrivalAirportId) ? {error} : "";
     }
 
     if(query.price) {
         [minPrice, maxPrice] = query.price.split("-");
         customFilter.price = {
-            [Op.between]: [minPrice, ((maxPrice == undefined) ? 2000 : maxPrice)]
+            [Op.between]: [minPrice, ((maxPrice == undefined) ? 20000 : maxPrice)]
         }
     }
 
